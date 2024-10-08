@@ -1,3 +1,64 @@
+section {
+    text-align: left;
+    background-color: lightgray;  
+    padding: 20px;  
+    box-sizing: border-box;  
+    margin: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.profile-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    display: flex;  
+}
+
+.profile-pic {
+    border-radius: 5%;  
+    width: 100%;        
+    height: auto;       
+    display: block;     
+    margin: 0 auto;     
+    max-width: 320px; 
+}
+
+#about {
+    width: 75%;  
+}
+
+#image {
+    width: 25%;  
+    font-size: 24px;  /* 字體大小固定為24像素 */
+    text-align: center;
+}
+
+#image p {
+    margin: 0;  
+}
+
+.information-container {
+    display: flex;           /* 使用 Flexbox 讓子元素並排 */
+    justify-content: space-between;  /* 在子元素之間保持間距 */
+    gap: 20px;               /* 增加區塊之間的間距 */
+    padding: 20px;           /* 為整個容器增加內邊距 */
+}
+
+#education,
+#achievement {
+    background-color: #f9f9f9; /* 添加背景顏色使區塊分明 */
+    border-radius: 10px;       /* 讓區塊邊角變圓 */
+    padding: 20px;             /* 區塊內的邊距 */
+    flex: 1;                   /* 讓每個 section 區塊均等分佈 */
+    box-sizing: border-box;     /* 確保 padding 不影響寬度 */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;       /* 增加標題與內容之間的距離 */
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -39,26 +100,7 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-.profile-container {
-    width: 100%;
-    text-align: center;
-    margin: 20px 0;
-}
 
-.profile-pic {
-    border-radius: 20%;
-    height: 200px; 
-    width: auto px; 
-    display: block;
-    margin: 0 auto;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 5px;
-}
 
 h2 {
     color: #333;
@@ -72,6 +114,13 @@ footer {
 }
 
 /* IMAGE */
+.BC-icon {
+    list-style: none;
+    padding-left: 30px;
+    background: url('image/BC.png') no-repeat left center;
+    background-size: 20px 20px;
+}
+
 .IM-icon {
     list-style: none;
     padding-left: 30px;
@@ -203,4 +252,10 @@ footer {
     background-size: 20px 20px;
 }
 
+.linkedin-icon {
+    list-style: none;
+    padding-left: 30px;
+    background: url('image/linkedin.png') no-repeat left center;
+    background-size: 20px 20px;
+}
 
