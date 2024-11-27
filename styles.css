@@ -201,6 +201,13 @@ footer {
     background-size: 20px 20px;
 }
 
+.AIF-icon {
+    list-style: none;
+    padding-left: 30px;
+    background: url('image/AIF.png') no-repeat left center;
+    background-size: 20px 20px;
+}
+
 .DEA-icon {
     list-style: none;
     padding-left: 30px;
