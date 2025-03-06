@@ -204,6 +204,13 @@ footer {
 }
 
 /* AWS Certified Images */
+.SAP-icon {
+    list-style: none;
+    padding-left: 30px;
+    background: url('image/SAP.png') no-repeat left center;
+    background-size: 20px 20px;
+}
+
 .CCP-icon {
     list-style: none;
     padding-left: 30px;
