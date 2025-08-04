@@ -1,168 +1,701 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chiayang Lu's Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chia-Yang Lu (Max) | Personal Resume</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+        }
+
+        .text-accent {
+            color: #64ffda;
+        }
+
+        .nav-link:hover .nav-indicator,
+        .nav-link.active .nav-indicator {
+            width: 64px;
+            background-color: #ccd6f6;
+        }
+
+        .nav-link.active .nav-indicator {
+            background-color: #64ffda;
+        }
+
+        .nav-link.active .nav-text {
+            color: #ccd6f6;
+        }
+
+        .nav-indicator {
+            transition: width 0.3s ease-in-out;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#abilities">Abilities</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#project">Project</a></li>
-            </ul>
-        </nav>
-        <h1>Chia-Yang Lu's Personal Website</h1>
-    </header>
-    <div class="profile-container">
-        <section id="image">
-            <img src="./image/head_sticker.jpg" alt="呂嘉洋的照片" class="profile-pic">
-            <p><strong>Chia Yang Lu</strong></p>
-            <p><strong>(Max)</strong></p>
-        </section>
-        <section id="about">
-            <h2>😎About Me</h2>
-            <p class="BD-icon"><strong>Birthday</strong>: 2002/6/5</p>
-            <p class="gender-icon"><strong>Gender</strong>: Male</p>
-            <p class="interest-icon"><strong>Interest</strong>: 🎵 Music, 🏀 Basketball, 💪 Workout</p>
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp; Hi! I'm Chia-Yang Lu (Max) , Currently a Master's student in Information
-                Management at National Taipei University, with a Bachelor's in Leisure and Sport Management and a minor
-                in Economics.
-                I have demonstrated leadership in organizing large-scale events and gained corporate experience through
-                an internship at Metaage & Nextlink Cloud Corporation.
-                I hold <strong>mulitiple AWS certifications</strong> , a <strong>TOEIC score of 925</strong>, and
-                <strong>knowledge with Python, Terraform, Git, AWS, GCP</strong>
-                I values integrity, commitment, and transparent communication, and aims to combine my knowledge with
-                practical experience to create value in the future.
-            </p>
-            <li class="medium-icon"><a href="https://medium.com/@chiayang.lu">My Medium</a></li>
-            <li class="github-icon"><a href="https://github.com/MaxLu2002">My GitHub</a></li>
-            <li class="linkedin-icon"><a href="https://www.linkedin.com/in/max-lu-192b942b0">My Linkedin</a></li>
-        </section>
+<body class="leading-relaxed antialiased">
+    <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+        <div class="lg:flex lg:justify-between lg:gap-4">
+
+            <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+                <div>
+                    <img src="./image/head_sticker.jpg" alt="呂嘉洋的照片"
+                        class="rounded-full h-64 w-64 mb-6 border-2 border-slate-600">
+
+                    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+                        <a href="/">Max Lu</a>
+                    </h1>
+                    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+                        <strong class="text-accent">Cloud Engineer | Data Engineer | Solutions Architect</strong>
+                    </h2>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="inline-flex items-center rounded-full bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-400 ring-1 ring-inset ring-teal-500/20 hover:bg-teal-500/20 transition">
+                            AWS
+                        </span>
+                        <span
+                            class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400 ring-1 ring-inset ring-orange-500/20 hover:bg-orange-500/20 transition">
+                            GCP
+                        </span>
+                        <span
+                            class="inline-flex items-center rounded-full bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-400 ring-1 ring-inset ring-yellow-500/20 hover:bg-yellow-500/20 transition">
+                            Python
+                        </span>
+                        <span
+                            class="inline-flex items-center rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400 ring-1 ring-inset ring-purple-500/20 hover:bg-purple-500/20 transition">
+                            Terraform
+                        </span>
+                    </div>
+
+                    <nav class="nav hidden lg:block" aria-label="In-page jump links">
+                        <ul class="mt-16 w-max">
+                            <li><a class="group flex items-center py-3 nav-link" href="#about">
+                                    <span
+                                        class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span
+                                        class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">About</span>
+                                </a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#education">
+                                    <span
+                                        class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span
+                                        class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Education</span>
+                                </a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#certifications">
+                                    <span
+                                        class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span
+                                        class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Certifications</span>
+                                </a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#experience">
+                                    <span
+                                        class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span
+                                        class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Experience</span>
+                                </a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#projects">
+                                    <span
+                                        class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span
+                                        class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Projects</span>
+                                </a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
+                    <li class="mr-5 shrink-0">
+                        <a class="block hover:text-slate-200" href="https://github.com/MaxLu2002" target="_blank"
+                            rel="noreferrer noopener" aria-label="GitHub">
+                            <span class="sr-only">GitHub</span>
+                            <img src="./image/github.png" alt="Medium" class="h-6 w-6">
+                        </a>
+                    </li>
+                    <li class="mr-5 shrink-0">
+                        <a class="block hover:text-slate-200" href="https://www.linkedin.com/in/max-lu-192b942b0"
+                            target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                            <span class="sr-only">LinkedIn</span>
+                            <img src="./image/linkedin.png" alt="Medium" class="h-6 w-6">
+                        </a>
+                    </li>
+                    <li class="mr-5 shrink-0">
+                        <a class="block hover:text-slate-200" href="https://medium.com/@chiayang.lu" target="_blank"
+                            rel="noreferrer noopener" aria-label="Medium">
+                            <span class="sr-only">Medium</span>
+                            <img src="./image/medium.png" alt="Medium" class="h-6 w-6">
+                        </a>
+                    </li>
+                    <li class="mr-5 shrink-0">
+                        <a class="block hover:text-slate-200" href="https://hackmd.io/@mvFZJ_qaT5KyaJsJBsLz4Q"
+                            target="_blank" rel="noreferrer noopener" aria-label="HackMD">
+                            <span class="sr-only">HackMD</span>
+                            <img src="./image/HackMD.png" alt="HackMD" class="h-6 w-6" />
+                        </a>
+                    </li>
+
+                </ul>
+            </header>
+
+            <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+
+                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+                    <div
+                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
+                    </div>
+                    <div class="text-slate-300 leading-relaxed space-y-4">
+                        <p>
+                            Hi! I'm <strong class="text-accent">Max Lu</strong>, a master's
+                            degree holder in Information
+                            Management from
+                            <strong class="font-bold text-slate-200">National Taipei University (NTPU)</strong>.
+                        </p>
+
+                        <p>
+                            Through my professional journey, I have developed strong capabilities in
+                            <strong class="text-accent">engineering, leadership</strong>,
+                            and <strong class="text-accent">collaboration</strong>.
+                            I hold multiple <strong class="text-accent">AWS certifications</strong>, possess a <strong
+                                class="text-accent">TOEIC score of
+                                925</strong>, and am proficient in
+                            <strong class="text-accent">Python, Terraform, GCP</strong>, and <strong
+                                class="text-accent">SQL</strong>.
+                        </p>
+
+                        <p>
+                            Along the way, I have cultivated values of <strong>integrity, commitment</strong>, and
+                            <strong>effective communication</strong>,
+                            refined through a wide range of tasks from technical documentation to project
+                            execution.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+                    aria-label="Education">
+                    <div
+                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Education</h2>
+                    </div>
+                    <div>
+                        <ol class="group/list">
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2024 to 2025">2024 — 2025</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div class="inline-flex items-baseline">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="mr-2 text-slate-400" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5zM8 5.482 1.5 8 8 10.518 14.5 8 8 5.482z" />
+                                                    <path
+                                                        d="M1 9.083a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5a.5.5 0 0 0-.422 0L1 9.083zm.025 3.668a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5a.5.5 0 0 0-.422 0L1 12.751z" />
+                                                </svg>
+                                                <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.ntpu.edu.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span>National
+                                                        Taipei University, NTPU</span></a>
+                                            </div>
+                                        </h3>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Master - Information
+                                            Management <strong> (GPA: 4.3)</strong></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2020 to 2024">2020 — 2024</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div class="inline-flex items-baseline">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="mr-2 text-slate-400" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5zM8 5.482 1.5 8 8 10.518 14.5 8 8 5.482z" />
+                                                    <path
+                                                        d="M1 9.083a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5a.5.5 0 0 0-.422 0L1 9.083zm.025 3.668a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5a.5.5 0 0 0-.422 0L1 12.751z" />
+                                                </svg>
+                                                <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.ntpu.edu.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span>National
+                                                        Taipei University, NTPU</span></a>
+                                            </div>
+                                        </h3>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Bachelor - Leisure and
+                                            Sport Management</p>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Minor - Economy</p>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Micro Program - English
+                                            Business Communication</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="certifications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+                    aria-label="Certifications and skills">
+                    <div
+                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Certifications
+                            & Skills</h2>
+                    </div>
+                    <div>
+                        <div class="mb-12">
+                            <h3 class="text-lg font-bold text-slate-200 mb-6">Certifications</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/SAP.png"
+                                        alt="AWS Certified Solutions Architect - Professional Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Solutions
+                                        Architect<br>Professional</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/PDE.png" alt="GCP Data Engineer – Professional Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">GCP Data
+                                        Engineer<br>Professional</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/MLS.png" alt="AWS Certified Machine Learning – Specialty Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Machine
+                                        Learning<br>Specialty</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/SAA.png" alt="AWS Certified Solutions Architect - Associate Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Solutions
+                                        Architect<br>Associate</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/DVA.png" alt="AWS Certified Developer – Associate Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Developer<br>Associate</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/DEA.png" alt="AWS Certified Data Engineer – Associate Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Data Engineer<br>Associate
+                                    </p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/MLA.png"
+                                        alt="AWS Certified Machine Learning Engineer – Associate Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">ML Engineer<br>Associate
+                                    </p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/CCP.png" alt="AWS Certified Cloud Practitioner Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">Cloud
+                                        Practitioner<br>Foundational</p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1">
+                                    <img src="./image/AIF.png" alt="AWS Certified AI Practitioner Badge"
+                                        class="h-20 w-20 mb-3">
+                                    <p class="text-center text-sm font-medium text-slate-300">AI
+                                        Practitioner<br>Foundational</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-200 mb-6">Other Skills & Certifications</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div
+                                    class="group flex flex-col items-center justify-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1 min-h-[144px]">
+                                    <p class="text-accent text-3xl font-bold">925</p>
+                                    <p class="text-center text-sm font-medium text-slate-300 mt-2">
+                                        <strong>TOEIC</strong>
+                                    </p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center justify-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1 min-h-[144px]">
+                                    <img src="./image/python.png" alt="python Logo" class="h-12 w-12 mb-3" />
+                                    <p class="text-center text-sm font-medium text-slate-300">
+                                        <strong>Python</strong>
+                                    </p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center justify-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1 min-h-[144px]">
+                                    <img src="./image/SQL.png" alt="MySQL Logo" class="h-12 w-12 mb-3" />
+                                    <p class="text-center text-sm font-medium text-slate-300">
+                                        <strong>MySQL</strong>
+                                    </p>
+                                </div>
+                                <div
+                                    class="group flex flex-col items-center justify-center p-4 bg-slate-800/50 rounded-lg transition-all hover:bg-slate-700/50 hover:shadow-lg hover:-translate-y-1 min-h-[144px]">
+                                    <img src="./image/Terraform.png" alt="Terraform Logo" class="h-12 w-12 mb-3" />
+                                    <p class="text-center text-sm font-medium text-slate-300">
+                                        <strong>Terraform</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+                    aria-label="Work experience">
+                    <div
+                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Experience
+                        </h2>
+                    </div>
+                    <div>
+                        <ol class="group/list">
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2025 to Present">05/2025 — PRESENT</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div><a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.wingwill.com.tw/zh-tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span
+                                                        class="text-accent">Cloud
+                                                        Engineer · WingWill Corporation</span></a></div>
+                                        </h3>
+                                        <ul class="mt-2 list-disc list-inside text-slate-400 space-y-1">
+                                            <li>Design cloud solution architectures for data and AI projects.</li>
+                                            <li>Developed a time-series forecasting model by AWS Sagemaker Canva</li>
+                                            <li>Applied data wrangling and AutoML techniques and Reach ~83% accuracy.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2023 to 07/2025">09/2023 — 07/2025</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div><a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.nstc.gov.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span
+                                                        class="text-accent">Research
+                                                        Assistant · National Science and Technology Council</span></a>
+                                            </div>
+                                        </h3>
+                                        <ul class="mt-2 list-disc list-inside text-slate-400 space-y-1">
+                                            <li>Applied GenAI based backend via API for real-time coaching feedback.
+                                            </li>
+                                            <li>Developed system UI with Node.js and based on JavaScript.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2024 to 2025">04/2024 — 05/2025</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div><a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.nextlink.com.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span
+                                                        class="text-accent">Intern
+                                                        · Nextlink Corporation</span></a></div>
+                                        </h3>
+                                        <ul class="mt-2 list-disc list-inside text-slate-400 space-y-1">
+                                            <li>Assisted Cloud Solution Architects with customer architecture planning
+                                                and design.</li>
+                                            <li>Managed projects and documentation for AWS Competency applications.</li>
+                                            <li>Represented the company in technical competitions, contributing to team
+                                                achievements.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="July to August 2023">07/2023 — 08/2023</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div><a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://www.metaage.com.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span
+                                                        class="text-accent">Intern
+                                                        · Metaage Corporation</span></a></div>
+                                        </h3>
+                                        <ul class="mt-2 list-disc list-inside text-slate-400 space-y-1">
+                                            <li>Supported daily operations across various departments, building a
+                                                foundational understanding of enterprise-level IT operations.</li>
+                                            <li>Learned about the practical applications of cloud services and
+                                                enterprise solutions.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <header
+                                        class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                                        aria-label="2022 to 2023">09/2022 — 06/2023</header>
+                                    <div class="z-10 sm:col-span-6">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <div><a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                    href="https://lsm.ntpu.edu.tw/" target="_blank"
+                                                    rel="noreferrer noopener">
+                                                    <span
+                                                        class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span><span
+                                                        class="text-accent">President
+                                                        of the Student Association · Dept. of Leisure and Sport
+                                                        Management, NTPU</span></a></div>
+                                        </h3>
+                                        <ul class="mt-2 list-disc list-inside text-slate-400 space-y-1">
+                                            <li>Led the department's student association, successfully organizing
+                                                multiple large-scale academic and recreational events.</li>
+                                            <li>Managed annual budget planning, control, and verification to ensure
+                                                financial transparency.</li>
+                                            <li>Acted as a communication bridge between students and the department,
+                                                effectively coordinating needs.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+
+                <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+                    aria-label="Selected projects">
+                    <div
+                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
+                    </div>
+                    <div>
+                        <ul class="group/list">
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <div class="z-10 sm:col-span-8">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                href="https://github.com/MaxLu2002/Building-AWS-Test-Envitonmen-by-Terraform"
+                                                target="_blank" rel="noreferrer noopener">
+                                                <span
+                                                    class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                                <span>AWS Test Environment Automation</span>
+                                            </a>
+                                        </h3>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Developed a solution to
+                                            automate the creation of AWS test environments using Infrastructure as Code
+                                            principles.</p>
+                                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    Terraform</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    AWS</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    IaC</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <div class="z-10 sm:col-span-8">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                href="https://github.com/MaxLu2002/AWS-NEWS-Summarizer-with-Amazon-Bedrock.git"
+                                                target="_blank" rel="noreferrer noopener">
+                                                <span
+                                                    class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                                <span>AWS News Summarizer with GenAI</span>
+                                            </a>
+                                        </h3>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Built a tool that
+                                            leverages generative AI to summarize the latest AWS news, providing quick
+                                            and concise updates.</p>
+                                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    Python</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    Amazon Bedrock</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    AWS Lambda</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-12">
+                                <div
+                                    class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div
+                                        class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                                    </div>
+                                    <div class="z-10 sm:col-span-8">
+                                        <h3 class="font-medium leading-snug text-slate-200">
+                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-accent focus-visible:text-accent group/link text-base"
+                                                href="https://medium.com/@chiayang.lu/simplify-disaster-recovery-how-to-set-up-aws-drs-on-your-ec2-instance-windows-6d165ca62071"
+                                                target="_blank" rel="noreferrer noopener">
+                                                <span
+                                                    class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                                <span>Disaster Recovery Automation Script</span>
+                                            </a>
+                                        </h3>
+                                        <p class="mt-2 text-sm leading-normal text-slate-400">Created a PowerShell
+                                            script to automate the installation of the AWS DRS agent on EC2 instances,
+                                            simplifying disaster recovery setup.</p>
+                                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    PowerShell</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    AWS DRS</div>
+                                            </li>
+                                            <li class="mr-1.5 mt-2">
+                                                <div
+                                                    class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+                                                    EC2</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
-    <section id="skills">
-        <h2>🔨Skills</h2>
-        <ul>
-            <li class="SAP-icon">AWS Certified Solutions Architect - Professional</li>
-            <li class="MLS-icon">AWS Certified Machine Learning – Specialty</li>
-            <li class="DVA-icon">AWS Certified Developer – Associate</li>
-            <li class="DEA-icon">AWS Certified Data Engineer – Associate</li>
-            <li class="SAA-icon">AWS Certified Solutions Architect - Associate</li>
-            <li class="CCP-icon">AWS Certified Cloud Practitioner</li>
-            <li class="AIF-icon">AWS Certified AI Practitioner Early Adopter</li>
-            <li class="MLA-icon">AWS Certified Machine Learning Engineer – Associate Early Adopter</li>
-            <li class="TOEIC-icon">TOEIC 925</li>
-            <li class="python-icon">Python Coursera Certification</li>
-            <li class="GCP-icon">Experience with GCP</li>
-            <li class="SQL-icon">Experience with MySQL</li>
-        </ul>
-    </section>
-    <div class="information-container">
-        <section id="education">
-            <h2>📚Education</h2>
-            <ul>
-                <li class="IM-icon"><strong>Master</strong> of Information Management, National Taipei University</li>
-                <li class="IM-icon"><strong>Bachelor</strong> of Information Management, National Taipei University</li>
-                <li class="LSM-icon"><strong>Bachelor</strong> of Leisure and Sport Management, National Taipei
-                    University</li>
-                <li class="ECO-icon"><strong>Minor</strong> in Economics, National Taipei University</li>
-                <li class="BC-icon"><strong>Micro Certification Program</strong> of Business Communication</li>
-            </ul>
-        </section>
-        <section id="achievement">
-            <h2>🚩Achievement</h2>
-            <ul>
-                <li>2025/03: Representative for NTPU at the 55rd National Cloud Skills Competition</li>
-                <li>2024/06: Project Leader - ML Forecasting for Enterprises</li>
-                <li>
-                    <a href="https://www.nextlink.cloud/news/y24-government-competency/" target="_blank">
-                        2024/12: Project Assistance - AWS Government Competency Application
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.nextlink.cloud/news/nextlink-2024-aws-genai-gameday-winning/" target="_blank">
-                        2024/08: AWS GenAI GameDay 1st Place of GCR
-                    </a>
-                </li>
-                <li>
-                    <a href="https://lsm.ntpu.edu.tw/page-search.php?q=%E5%91%82%E5%98%89%E6%B4%8B" target="_blank">
-                        2024/06: NTPU Award for Academic and Moral Excellence
-                    </a>
-                </li>
-                <li>
-                    <a href="https://ws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMzMxL3JlbGZpbGUvMTAyNDQvMTY5MTYzL2UyODk3YWE0LWI2ZWMtNDBmZS1iZjU4LWRlNzBmYzgyNzljYS5wZGY%3d&n=56ysNTTlsYblhajlnIvmioDog73nq7bos73ljJfljYDliIbljYDmioDog73nq7bos73oi7Hpm4Tmppwo6Z2S5bm057WEKS5wZGY%3d"
-                        target="_blank">
-                        2024/03: Honorable Mention at the 54rd National Cloud Skills Competition
-                    </a>
-                </li>
-                <li>
-                    <a href="https://cms-carrier.ntpu.edu.tw/uploads/112_1_68f99d538f.pdf" target="_blank">
-                        2024/02: NTPU 2024 Outstanding Achievement in Coursework
-                    </a>
-                </li>
-            </ul>
 
-        </section>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let currentActive = null;
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                currentActive = link;
+                            }
+                        });
+                        if (currentActive) {
+                            currentActive.classList.add('active');
+                        }
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
 
+            sections.forEach(section => {
+                observer.observe(section);
+            });
 
-    <section id="experience">
-        <h2>📜Experience</h2>
-        <ul>
-            <li>04/2024 ~ PRESENT – <strong>Intern</strong>, Nextlink Corporation</li>
-            <li>09/2023 ~ PRESENT – <strong>Research Assistant</strong>, National Science and Technology Council</li>
-            <li>07/2023 ~ 08/2023 – <strong>Intern</strong>, Metaage Corporation</li>
-            <li>09/2022 ~ 06/2023 – <strong>President of the Student Association</strong>, Department of Leisure and
-                Sport Management, NTPU</li>
-            <li>06/2022 ~ 03/2023 – <strong>Marketing Leader</strong>, NTPU Run To Fly, NTPU</li>
-            <li>06/2022 ~ 03/2023 – <strong>Vice Leader</strong>, NTPU Run To Fly, NTPU</li>
-            <li>06/2021 ~ 03/2022 – <strong>Marketing Team</strong>, NTPU Run To Fly, NTPU</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>📫Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:chiayang.lu@gmail.com">chiayang.lu@gmail.com</a></p>
-        <p><strong>Phone:</strong> +886 0963910605</p>
-    </section>
-    <section id="project">
-        <h2>🧱Side-Project</h2>
-        <li class="github-icon">GitHub: <a
-                href="https://github.com/MaxLu2002/Building-AWS-Test-Envitonmen-by-Terraform">Building-AWS-Test-Envitonmen-by-Terraform</a>
-        </li>
-        <li class="github-icon">GitHub: <a
-                href="https://github.com/MaxLu2002/AWS_Transfer-Forecast-to-Sagemaker-Canvas">AWS_Transfer-Forecast-to-Sagemaker-Canvas</a>
-        </li>
-        <li class="github-icon"> GitHub: <a
-                href="https://github.com/MaxLu2002/Building-AWS-Test-Envitonmen-by-Terraform">Building-AWS-Test-Envitonmen-by-Terraform</a>
-        </li>
-        <li class="medium-icon">Medium: <a
-                href="https://medium.com/@chiayang.lu/amazon-forecast-%E8%BD%89%E6%8F%9B%E5%88%B0-sagemaker-canvas-b910b6310a40">Amazon
-                Forecast 轉換到 Sagemaker Canvas</a></li>
-        <li class="github-icon">GitHub: <a
-                href="https://github.com/MaxLu2002/AWS-NEWS-Summarizer-with-Amazon-Bedrock.git">AWS-NEWS-Summarizer-with-Amazon-Bedrock</a>
-        </li>
-        <li class="github-icon">GitHub: <a
-                href="https://github.com/MaxLu2002/Install-DRS-Agent-on-EC2-by-PowerShell">Install-DRS-Agent-on-EC2-by-PowerShell</a>
-        </li>
-        <li class="medium-icon">Medium: <a
-                href="https://medium.com/@chiayang.lu/simplify-disaster-recovery-how-to-set-up-aws-drs-on-your-ec2-instance-windows-6d165ca62071">Simplify
-                Disaster Recovery: How to Set Up AWS DRS on Your EC2 Instance (Windows)</a>
-        </li>
-    </section>
-    <footer>
-        <p>&copy; Chiayang Lu's Personal Website</p>
-    </footer>
+            const firstSection = sections[0];
+            if (firstSection) {
+                const initialLink = document.querySelector(`.nav-link[href="#${firstSection.id}"]`);
+                if (initialLink) initialLink.classList.add('active');
+            }
+        });
+    </script>
 </body>
 
 </html>
